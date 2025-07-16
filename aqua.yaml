@@ -4,12 +4,12 @@ registries:
     repo_owner: risu729
     repo_name: aqua-registry
     # MODIFY
-    ref: main
+    ref: fix/opentofu/opentofu
     path: registry.yaml
 
 packages:
   # MODIFY
-  - name: jdx/usage@v2.2.2
+  - name: opentofu/opentofu@v1.10.3
     registry: fork
     # MODIFY
-    # TEST: usage --version
+    # TEST: tofu --version
