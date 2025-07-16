@@ -9,7 +9,7 @@ registries:
 
 packages:
   # MODIFY
-  - name: opentofu/opentofu@v
+  - name: opentofu/opentofu@v1.10.3
     registry: fork
     # MODIFY
     # TEST: tofu --version
