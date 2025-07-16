@@ -1,0 +1,15 @@
+registries:
+  - name: fork
+    type: github_content
+    repo_owner: risu729
+    repo_name: aqua-registry
+    # MODIFY
+    ref: main
+    path: registry.yaml
+
+packages:
+  # MODIFY
+  - name: jdx/usage@v2.2.2
+    registry: fork
+    # MODIFY
+    # TEST: usage --version
