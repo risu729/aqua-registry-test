@@ -1,0 +1,15 @@
+registries:
+  - name: fork
+    type: github_content
+    repo_owner: risu729
+    repo_name: aqua-registry
+    # MODIFY
+    ref: feat/REPO
+    path: registry.yaml
+
+packages:
+  # MODIFY
+  - name: REPO@v
+    registry: fork
+    # MODIFY
+    # TEST: EXE --version
