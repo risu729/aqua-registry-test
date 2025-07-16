@@ -12,4 +12,4 @@ packages:
   - name: ytdl-org/ytdl-nightly@2025.05.05
     registry: fork
     # MODIFY
-    # TEST: youtube-dl --version
+    # TEST: youtube-dl.exe --version
