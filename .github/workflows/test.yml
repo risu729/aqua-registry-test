@@ -5,7 +5,24 @@ on:
   pull_request:
 
 jobs:
+  extract:
+    runs-on: ubuntu-latest
+    outputs:
+      command: ${{ steps.get-command.outputs.command }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Extract command from aqua.yaml
+        id: get-command
+        run: |
+          command=$(cat aqua.yaml | grep '^\s*# TEST:' | sed 's/^\s*# TEST: //')
+          if [ -z "$command" ]; then
+            echo "No command to test found in aqua.yaml"
+            exit 1
+          fi
+          echo "command=$command" >> "$GITHUB_OUTPUT"
+
   test:
+    needs: extract
     strategy:
       fail-fast: false
       matrix:
@@ -25,12 +42,5 @@ jobs:
       - uses: aquaproj/aqua-installer@main
         with:
           aqua_version: v2.53.4
-      - run: |
-          command=$(cat aqua.yaml | grep '^\s*# TEST:' | sed 's/^\s*# TEST: //')
-          if [ -z "$command" ]; then
-            echo "No command to test found in aqua.yaml"
-            exit 1
-          fi
-          echo "command=$command" >> "$GITHUB_OUTPUT"
-        id: get-command
-      - run: ${{ steps.get-command.outputs.command }}
+          aqua_opts: ""
+      - run: ${{ needs.extract.outputs.command }}
