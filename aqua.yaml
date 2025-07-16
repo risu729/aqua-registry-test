@@ -4,12 +4,12 @@ registries:
     repo_owner: risu729
     repo_name: aqua-registry
     # MODIFY
-    ref: feat/REPO
+    ref: feat/ytdl-org/ytdl-nightly
     path: registry.yaml
 
 packages:
   # MODIFY
-  - name: REPO@v
+  - name: ytdl-org/ytdl-nightly@2025.05.05
     registry: fork
     # MODIFY
-    # TEST: EXE --version
+    # TEST: youtube-dl --version
