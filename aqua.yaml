@@ -4,12 +4,12 @@ registries:
     repo_owner: risu729
     repo_name: aqua-registry
     # MODIFY
-    ref: feat/REPO
+    ref: feat/Kotlin/kotlin-interactive-shell
     path: registry.yaml
 
 packages:
   # MODIFY
-  - name: REPO@v
+  - name: Kotlin/kotlin-interactive-shell@v0.5.2
     registry: fork
     # MODIFY
-    # TEST: EXE --version
+    # TEST: ki.sh --version
