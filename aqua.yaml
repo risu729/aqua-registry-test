@@ -12,4 +12,4 @@ packages:
   - name: Kotlin/kotlin-interactive-shell@v0.5.2
     registry: fork
     # MODIFY
-    # TEST: ki.sh --version
+    # TEST: ki.bat --version
