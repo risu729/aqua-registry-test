@@ -4,12 +4,12 @@ registries:
     repo_owner: risu729
     repo_name: aqua-registry
     # MODIFY
-    ref: feat/REPO
+    # ref: feat/REPO
     path: registry.yaml
 
 packages:
   # MODIFY
-  - name: REPO@v
+  - name: CycloneDX/cyclonedx-cli@v0.29.1
     registry: fork
     # MODIFY
-    # TEST: EXE --version
+    # TEST: cyclonedx --version
